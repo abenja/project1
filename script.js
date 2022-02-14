@@ -1,8 +1,13 @@
 
 //adds new item to the list
+
+
 function addItem() {
-    
+    // creates new li element and sets attributes to it
     var li = document.createElement('li');
+    li.setAttribute('onclick', 'check()');
+    li.setAttribute('id', 'itemOnList');
+
     var inputValue = document.getElementById('inputItem').value;
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
@@ -15,6 +20,7 @@ function addItem() {
         alert("You need to write something!");
         document.getElementById('inputItem').style.backgroundColor = "#ec3b3b9c";
     }
+
 
 
     //Halutaan lisätä uusi item ensimmäiseksi listalla: li.insertBefore(inputValue, li.firstChild);??
@@ -31,7 +37,7 @@ function enter(event) {
     }
 }
 
-function clickable() {
-    var clickedItem = document.getElementsByTagName('li');
-    clickedItem.onclick = alert('allo');
+function check() {
+    var clickedItem = document.getElementById('newUL').getElementsByTagName('li');
+    alert(clickedItem);
 }
