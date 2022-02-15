@@ -13,19 +13,24 @@
         <div class="container">
             <div id="todoDiv" class="header">
             <h1>To-do list</h1>
-            <input type="text" id="inputItem" onkeypress="enter(event)" placeholder="Item:">
-            <input type="button" id="submitButton" onclick="addItem()" value="Add item:">
-            <h3 id="itemsList">Items:</h3>
+            <form action="#" id="myForm" onsubmit="addItem()">
+                <input type="text" id="itemField" placeholder="Add item:" />
+                <input type="button" id="submitButton" onclick="addItem()" value="Add item:" />
+
+            </form>
+            <h3 id='itemsList'>Items:</h3>
 
 
-            <ul id="newUL">    
+            <ul id="listUl">    
 
             </ul>
 
+            <h4 id="checkedItems">Checked items:</h4>
+
             </div>
 
-            <div id="checkedItemsDiv" class="header">
-                <h4 id="checkedItems">Checked items:</h4>
+           
+                
 
             </div>
         </div>

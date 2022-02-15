@@ -1,9 +1,9 @@
-/* .container {
+.container {
 	display: flex;
 	justify-content: center;
+	padding-top: 100px;
 }
 
-*/
 
 #submitButton {
 	box-shadow:inset 0px 1px 0px 0px #caefab;
@@ -36,7 +36,7 @@
 	font-size: 16px;
 	border-width: 1px;
 	border-color: #ffffff;
-	background-color: #ececec;
+	background-color: rgb(189, 70, 70);
 	color: #000000;
 	border-style: solid;
 	border-radius: 6px;
@@ -59,4 +59,9 @@ ul {
   	-moz-user-select: none;
   	-ms-user-select: none;
     user-select: none;
+}
+
+
+.checked {
+	text-decoration: line-through;
 }
