@@ -4,44 +4,52 @@
 
 function addItem() {
 
-    
-
-
     var inputValue = document.getElementById('itemField').value;
     var t = document.createTextNode(inputValue);
-    
-    
+    var li = document.createElement('li');
+
     if (inputValue.length <= 0) {
         document.getElementById('itemField').style.backgroundColor = "#f06e66";
         alert("You need to write something!");
     } else {
-        var li = document.createElement('li');
-
+        
         document.getElementById('listUl').appendChild(li);
         li.appendChild(t);
-        li.setAttribute('onclick', 'check()');
+        
         document.getElementById('itemField').value = "";
-
+        saveItem();
     }
     
 }
 
-
-function check() {
+// adds "checked" class to element when clicked IF it doesn't have it. If class exists, it is deleted when clicked.
     var list = document.getElementById('listUl');
-
-
     list.addEventListener('click',function(e){
-        list = e.target;
-        if(list.classList.contains('checked')){
-            list.classList.remove('checked');
+        var line = e.target;
+        if(line.classList.contains('checked')){
+            line.classList.remove('checked');
 
         } else {
-          list.classList.add('checked');
+          line.classList.add('checked');
         }
       },false)
 
 
-    }
 
-// nyt double clickillä viiva????
+
+// gets checked items into "checked items"
+
+
+// function to store information on browser
+function saveItem() {
+    localStorage.setItem('item', list.innerHTML);
+}
+
+function getStored() {
+    if (document.getElementsByClassName('checked')) {
+    var got = localStorage.getItem('item');
+    alert(got);
+    } else {
+        alert('not');
+    }
+}
