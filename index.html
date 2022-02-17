@@ -16,6 +16,8 @@
             <form action="#" id="myForm" onsubmit="addItem()">
                 <input type="text" id="itemField" placeholder="Add item:" />
                 <input type="button" id="submitButton" onclick="addItem()" value="Add item:">
+                <input type="button" id="resetButton" onclick="resetAll()" value="RESET">
+
 
             </form>
             <h3 id='itemsList'>Items:</h3>
@@ -26,14 +28,13 @@
             </ul>
 
             <h4 id="checkedItems">Checked items:</h4>
-            <input type="button" id="submitButton" onclick="getStored()" value="get items:">
             </div>
 
            
                 
 
             </div>
-        </div>
+
         <script src="script.js" async defer></script>
     </body>
 </html>
