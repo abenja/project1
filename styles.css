@@ -2,8 +2,12 @@
 	display: flex;
 	justify-content: center;
 	padding-top: 100px;
+	
 }
 
+body {
+	background-color: #efabab;
+}
 
 #submitButton {
 	box-shadow:inset 0px 1px 0px 0px #caefab;

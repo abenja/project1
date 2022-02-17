@@ -1,6 +1,7 @@
 
 //adds new item to the list
 
+//TÄLLÄ HETKELLÄ RESETIN JÄLKEEN EI VOI ENÄÄ LISÄTÄ MITÄÄN!!
 
 function addItem() {
 
@@ -21,6 +22,7 @@ function addItem() {
         li.appendChild(t);
     
         document.getElementById('itemField').value = "";
+        document.getElementById('itemField').style.backgroundColor = 'white';
         saveItem(inputValue);
 
         // adds remove-mark next to item
@@ -90,7 +92,15 @@ function saveItem(listUl) {
 // adds a clear all button, which resets the whole to-do list AND cleares the localStorage as well
 function resetAll() {
     if (confirm('You\'re about to reset. This cannot be undone. Proceed?')) {
-        document.getElementById('listUl').style.display = "none";
+// tähän pitää tehdä ehkä for-loop, joka käy läpi kaikki li-elementit ja poistaa ne.
+// Nyt ohjelma poistaa ul-elementin eikä sinne voi siksi enää lisätä uusia li-elementtejä
+
+        for (let i = 0; i < document.getElementById('listUl'); i++) {
+            document.getElementById('listItem').style.display = "none";
+        
+        }
         localStorage.clear();
+
+        
     }
 }
