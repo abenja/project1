@@ -8,34 +8,39 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <script src="script.js" async></script>
     </head>
     <body>
         <div class="container">
             <div id="todoDiv" class="header">
             <h1>To-do list</h1>
+            <select id="startOptions" onchange="start()">
+                <option disabled selected>Choose an action:</option>
+                <option value="1">Create new list</option>
+                <option value="2">Show stored items</option>
+            </select>
             <form action="#" id="myForm" onsubmit="addItem()">
-                <input type="text" id="itemField" placeholder="Add item:" />
+                <input type="text" id="inputField" placeholder="Add item:">
                 <input type="button" id="submitButton" onclick="addItem()" value="Add item:">
                 <input type="button" id="resetButton" onclick="resetAll()" value="RESET">
+                <span id="nothingToReset"></span>
 
 
             </form>
-            <h3 id='itemsList'>Items:</h3>
+            <h3 id='itemsHeader' hidden="">Items:</h3>
 
 
-            <ul id="listUl">    
+            <ul id="listUl"> 
+ 
 
             </ul>
+            <input type="button" id="clearButton" onclick="clearCompleted()" value="Clear completed items" hidden="">
 
-            <h4 id="checkedItems">Checked items:</h4>
+            
             </div>
+        </div>
 
-           
-                
-
-            </div>
-
-        <script src="script.js" async defer></script>
+        
     </body>
 </html>
 
