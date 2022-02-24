@@ -80,10 +80,8 @@ function addItem() {
 var list = document.getElementById('listUl');
 list.addEventListener('click', function(e) {
     var li = e.target;
-
     if (li.classList.contains('checked')) {
         li.classList.remove('checked');
-
     } else {
         li.classList.add('checked');
         // Removes the checked-class from the removeButton element.
@@ -106,12 +104,15 @@ function saveItem(listUl) {
         itemsOnList = JSON.parse(localStorage.getItem('itemsOnList'));
     }
     itemsOnList.push(listUl);
+
     // Lastly, the value is set and stored into the localStorage
     localStorage.setItem('itemsOnList', JSON.stringify(itemsOnList));
 }
 
 // adds a clear all button, which resets the whole to-do list AND cleares the localStorage as well
 function resetAll() {
+    
+    // Checks whether localStorage has items in it. If it does, the user is asked to confirm. If not, the user is told that there is nothing to reset.
     if (localStorage.length > 0) {
         if (confirm('You\'re about to reset. This cannot be undone. Proceed?')) {
             document.getElementById('listUl').innerHTML = '';
@@ -125,7 +126,6 @@ function resetAll() {
 
 // Creates a new list. Works similarly to the resetAll() function, without the "alert("There is nothing to reset!");", sinse it is not necessary here
 // If there is nothing to reset, the program simply allows the user to start a new list
-
 function newList() {
     if (localStorage.length > 0) {
         if (confirm('You\'re about to reset. This cannot be undone. Proceed?')) {
@@ -140,6 +140,7 @@ function clearCompleted() {
     var list = document.getElementById('listUl');
     var deleting = list.getElementsByTagName('li');
 
+    // Iterates through the li-items and checks for a 'checked'-class. If it is present, the corresponding li-element is removed by styling the display to 'none'.
     for (var i = 0; i < deleting.length; i++) {
         if (deleting[i].classList.contains('checked')) {
             deleting[i].style.display = 'none';
@@ -148,33 +149,32 @@ function clearCompleted() {
 }
 
 // Gets stored items from localStorage. If storage is empty, user is alerted with message.
-// If locaStorage contains a key-value pair, the values are iterated through with a for-loop and added to the listUl-element.t
+// If locaStorage contains a key-value pair, the values are iterated through with a for-loop and added to the listUl-element.
 function getStored() {
     var storedKey;
+    //Checks if localStorage is empty and alerts if it is empty.
     if (localStorage.length == 0) {
         alert('No items stored!');
         newList();
     } else {
+        // Makes the items-header visible
         document.getElementById('itemsHeader').removeAttribute('hidden');
+
+        // If localStorage is not empty, the key-value pair is retrieved
         storedKey = JSON.parse(localStorage.getItem('itemsOnList'));
+        // For-loop is used to iterate through the array
         for (var i = 0; i < storedKey.length; i++) {
 
-            // Basically similar functionality as with the addItem()-function, only with stored items, not with user input
+            // Basically similar functionality from here as with the addItem()-function, only now with stored items instead of user input
             var t = document.createTextNode(storedKey[i]);
             var storedLi = document.createElement('li');
-
             document.getElementById('listUl').appendChild(storedLi);
             storedLi.append(t);
-
             var trash = document.createElement('button');
             trash.setAttribute('id', 'removeButton');
-
-            //adds styling and an onclick-event that removes the element
             trash.innerHTML = 'x';
             trash.setAttribute('onclick', 'this.parentElement.style.display = "none"');
             storedLi.appendChild(trash);
-
-            // "Adds" a Clear Completed -button by removing the hidden attribute initially given to it in the index.html-file.
             document.getElementById('clearButton').removeAttribute('hidden');
             document.getElementById('clearButton').style.display = 'flex';
         }
