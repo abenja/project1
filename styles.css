@@ -4,31 +4,47 @@
 	justify-content: center;
 	display: flex;
 	margin: 0px auto;
-	max-width: 700px;
+	max-width: 800px;
 	padding-bottom: 10px;
-
-/* From https://css.glass */
-background: rgba(245, 243, 233, 0.41);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(10.1px);
--webkit-backdrop-filter: blur(10.1px);
-border: 1px solid rgba(245, 243, 233, 0.52);
+	/* From https://css.glass */
+	background: rgba(245, 243, 233, 0.41);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.1px);
+	-webkit-backdrop-filter: blur(10.1px);
+	border: 1px solid rgba(245, 243, 233, 0.52);
 }
 
 
 body {
 	background: linear-gradient(to right, #BF6330, #625185);
 	margin-top: 30px;
+	
 }
 
 h1 {
 	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	max-height: 50px;
+	max-width: 250px;
+	padding: 6px;
+	padding-top: 8px;
+	/* From https://css.glass */
+	background: rgba(245, 243, 233, 0.41);
+	border-radius: 6px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(10.1px);
+	-webkit-backdrop-filter: blur(10.1px);
+	border: 1px solid rgba(245, 243, 233, 0.52);
+	font-family: 'Lucida Console', 'Courier New', monospace;
 }
 
 select {
 	padding: 5px;
-	font-size: 16px;
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size: 20px;
 	border-width: 1px;
 	border-color: #ffffff;
 	background-color: rgb(255, 255, 255);
@@ -51,12 +67,12 @@ select {
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
-	font-family:Arial;
-	font-size:15px;
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size:20px;
 	font-weight:bold;
 	margin-left: 5px;
 	padding:6px 24px;
-	text-decoration:none;
+
 	text-shadow:0px 1px 0px #6B9A84;
 	
 }
@@ -80,11 +96,10 @@ select {
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
-	font-family:Arial;
-	font-size:15px;
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size:20px;
 	font-weight:bold;
 	padding:6px 24px;
-	text-decoration: none;
 	text-shadow:0px 1px 0px #864522;
 }
 
@@ -99,20 +114,25 @@ select {
 	top:1px;
 }
 
+#itemsHeader {
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size: 20px;
+
+}
+
 #clearButton {
 	box-shadow:inset 0px 1px 0px 0px #dfcea8;
 	background:linear-gradient(to bottom, #f5d386 5%, #E3A924 100%);
+	margin: 0 auto;
 	background-color:#E3A924;
 	border-radius:6px;
 	border:1px solid #ac811c;
-	margin: 0 auto;
 	cursor:pointer;
 	color:#000000d5;
-	font-family:Arial;
-	font-size:15px;
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size:20px;
 	font-weight:bold;
 	padding:6px 24px;
-	text-decoration: none;
 	text-shadow:0px 1px 0px #E3A924;
 }
 
@@ -128,14 +148,16 @@ select {
 
 #removeButton {
 	border-radius: 3px;
-	font-weight: bold;
+	font-size: 20px;
 	background-color: goldenrod;
-	margin-left: 5px;
+	font-family: 'Lucida Console', 'Courier New', 'monospace';
+	cursor: crosshair;
 }
 
 #inputField {
 	padding: 5px;
-	font-size: 16px;
+	font-family: 'Lucida Console', 'Courier New', monospace;
+	font-size: 20px;
 	border-width: 1px;
 	border-color: #ffffff;
 	background-color: rgb(255, 255, 255);
@@ -153,13 +175,21 @@ select {
   position: relative;
   padding: 12px 0px 12px 40px;
   list-style-type: none;
-  font-size: 18px;
+  font-family: 'Lucida Console', 'Courier New', monospace;
+  font-size: 30px;
 	list-style-type: none;
     user-select: none;
 }
 
+li {
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+
+}
 
 
 .checked {
 	text-decoration: line-through;
+	color: #b83811;
 }
