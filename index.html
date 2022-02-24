@@ -18,7 +18,7 @@
                 <option value="1">Create new list</option>
                 <option value="2">Show stored items</option>
             </select>
-            <form action="#" id="myForm" onsubmit="addItem()">
+            <form action="#" id="myForm" onsubmit="addItem();return false">
                 <input type="text" id="inputField" placeholder="Add item:">
                 <input type="button" id="submitButton" onclick="addItem()" value="Add item:">
                 <input type="button" id="resetButton" onclick="resetAll()" value="RESET">
@@ -35,8 +35,6 @@
             
             </div>
             
-        </div>
-
-        
+        </div>        
     </body>
 </html>

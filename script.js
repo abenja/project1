@@ -28,6 +28,7 @@ function start() {
 
 // Adds new item to the list with attributes
 function addItem() {
+
     // Simply removes the hidden-attribute of the items-header
     document.getElementById('itemsHeader').removeAttribute('hidden');
 
