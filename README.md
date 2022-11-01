@@ -1,4 +1,4 @@
-Project 1, A. Benjamin (id 2005923)
+Project 1, A. Benjamin
 
 A simple shopping list, which asks the user to input new items, and adds them to the existing list. Application uses mainly DOM, with the basic HTML-structure being rather simple. I guess I could have created even more elements with JavaScript and DOM, but I think my understanding of the topic is conveyed sufficiently as it is. the CSS-file contains styling, but some styling is also done with DOM. I also think I could have made the js-code a bit tidier had I made different choices in the beginning of my project, but the program works as intended and at this point I am happy with it.
 
